@@ -1,5 +1,7 @@
 # Markdown Task Board Generator (StateM Governed Project)
 
+[English](README.md) | [繁體中文](README_zh-TW.md)
+
 A complete demonstration of building, verifying, and delivering a Python project governed by **[StateM](https://github.com/henryqin1997/statem)** — a lightweight state machine runtime for reliable AI agent workflows.
 
 ---
@@ -16,7 +18,7 @@ This project contains:
 
 The project workflow followed this state machine:
 
-```
+```text
 [setup] ---> [design] ---> [develop] <---> [verify] ---> [complete]
 ```
 
