@@ -148,5 +148,18 @@ statem history --run-id taskboard-v1
 
 ---
 
+## 👥 Authors & Co-Creators
+
+This project was developed through pair-programming and human-agent collaboration:
+
+| Collaborator | Role | Details / Tools |
+| :--- | :--- | :--- |
+| **Tonny Chiu** ([@tonnychiulab](https://github.com/tonnychiulab)) | Lead Architect & Developer | Concept, Direction & Supervision |
+| **Antigravity** | AI Coding Assistant | Autonomous Engineering & Verification |
+| **Google Gemini (Flash)** | Underlying LLM | Reasoning, Architecture Design & Implementation |
+| **Antigravity CLI (`agy`)** | Agentic Environment | Tool Execution, Terminal Harness & Automation |
+
+---
+
 ## 📄 License
 MIT

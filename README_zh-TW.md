@@ -148,5 +148,18 @@ statem history --run-id taskboard-v1
 
 ---
 
+## 👥 協作作者與貢獻者 (Authors & Co-Creators)
+
+本專案由人機結對編程（Human-Agent Pair Programming）協同完成：
+
+| 協作者 | 角色 | 職責 / 技術工具 |
+| :--- | :--- | :--- |
+| **Tonny Chiu** ([@tonnychiulab](https://github.com/tonnychiulab)) | 專案發起人與架構督導 | 核心需求設計、技術選型指導與品質把關 |
+| **Antigravity** | AI 程式開發助理 (Pair Assistant) | 自主工程開發、測試撰寫與狀態機驗證 |
+| **Google Gemini (Flash)** | 底層推論模型 (Underlying LLM) | 邏輯架構設計、核心模組撰寫與技術文件生成 |
+| **Antigravity CLI (`agy`)** | Agentic 執行環境 (Execution Harness) | 終端操作自動化、工具鏈調用與工作區狀態管理 |
+
+---
+
 ## 📄 授權條款
 MIT License
