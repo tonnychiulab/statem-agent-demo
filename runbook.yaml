@@ -1,0 +1,79 @@
+name: taskboard-agent-pipeline
+initial: setup
+
+nodes:
+  setup:
+    prompt: |
+      Initialize the environment and project specifications.
+      Ensure project layout is prepared.
+    before_transfer:
+      type: checklist
+      items:
+        - Project goals and requirements are clarified
+        - Directory structure is defined
+
+  design:
+    prompt: |
+      Specify the data structures and interface for TaskBoard.
+      Ensure test specifications are planned.
+    before_transfer:
+      - type: predicate
+        path: spec.md
+        exists: true
+        non_empty: true
+      - type: checklist
+        items:
+          - API contract defined
+          - Test cases drafted
+
+  develop:
+    prompt: |
+      Implement the task board core module and CLI.
+      Keep implementation clean and robust.
+    before_transfer:
+      type: checklist
+      items:
+        - Core parser and formatter implemented
+        - CLI interface implemented
+        - Code is formatted cleanly
+
+  verify:
+    prompt: |
+      Run the test suite and verify edge cases.
+      All tests must pass before reaching completion.
+    before_transfer:
+      - type: command
+        run: "python3 -m unittest discover -s tests -p 'test_*.py'"
+      - type: checklist
+        items:
+          - All automated unit tests passed
+          - Markdown rendering checked manually
+
+  complete:
+    prompt: |
+      Deliver the finalized package with documentation.
+      Produce final handoff summary.
+    in_hook:
+      type: message
+      text: "Pipeline execution completed successfully. Ready for release."
+
+edges:
+  - from: setup
+    to: design
+    condition: "Setup complete and ready to design."
+
+  - from: design
+    to: develop
+    condition: "Specification approved."
+
+  - from: develop
+    to: verify
+    condition: "Implementation ready for testing."
+
+  - from: verify
+    to: develop
+    condition: "Tests failed; need bug fix."
+
+  - from: verify
+    to: complete
+    condition: "All tests pass and verified."
